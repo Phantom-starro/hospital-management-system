@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDORA — Hospital Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div>
+          <div class="brand-name">MEDORA</div>
+          <div class="brand-tag">Healthcare</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-label">Overview</div>
+        <a href="#dashboard" class="nav-link active" data-route="dashboard">
+          <span class="nav-icon" aria-hidden="true">◫</span> Dashboard
+        </a>
+        <a href="#patients" class="nav-link" data-route="patients">
+          <span class="nav-icon" aria-hidden="true">◎</span> Patients
+        </a>
+        <a href="#doctors" class="nav-link" data-route="doctors">
+          <span class="nav-icon" aria-hidden="true">✚</span> Doctors
+        </a>
+        <a href="#appointments" class="nav-link" data-route="appointments">
+          <span class="nav-icon" aria-hidden="true">◷</span> Appointments
+        </a>
+        <a href="#records" class="nav-link" data-route="records">
+          <span class="nav-icon" aria-hidden="true">▤</span> Medical Records
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button type="button" class="sidebar-foot-btn">⚙ Settings</button>
+        <button type="button" class="sidebar-foot-btn">◉ Admin Profile</button>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        <div class="topbar-greeting">
+          <p class="greeting-sub" id="greetingSub">Good morning</p>
+          <h1 class="greeting-title" id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="search-pill top-search">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" id="globalSearch" placeholder="Quick search…" autocomplete="off">
+          </div>
+          <button type="button" class="icon-btn" aria-label="Notifications">🔔</button>
+          <div class="avatar">HA</div>
+        </div>
+      </header>
+
+      <main class="content" id="mainContent">
+        <!-- Dashboard -->
+        <section class="page view active" id="view-dashboard" data-page="dashboard"></section>
+        <!-- Patients -->
+        <section class="page view" id="view-patients" data-page="patients"></section>
+        <!-- Patient profile -->
+        <section class="page view" id="view-patient-profile" data-page="patient-profile"></section>
+        <!-- Doctors -->
+        <section class="page view" id="view-doctors" data-page="doctors"></section>
+        <!-- Doctor profile -->
+        <section class="page view" id="view-doctor-profile" data-page="doctor-profile"></section>
+        <!-- Appointments -->
+        <section class="page view" id="view-appointments" data-page="appointments"></section>
+        <!-- Records -->
+        <section class="page view" id="view-records" data-page="records"></section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="toast-stack" id="toastStack"></div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/patients.js"></script>
+  <script src="/js/doctors.js"></script>
+  <script src="/js/appointments.js"></script>
+  <script src="/js/records.js"></script>
+  <script src="/js/router.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
